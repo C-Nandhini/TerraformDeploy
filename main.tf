@@ -25,3 +25,12 @@ module "remote-state" {
     Environment = "dev"
   }
 }
+
+module "vpc" {
+  source = "./modules/vpc"
+  vpc_cidr_block = "192.168.0.0/24"
+  vpc_tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}
